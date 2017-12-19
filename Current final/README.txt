@@ -13,15 +13,15 @@ JRE:
 Press "Build wrapper"
 ----------------------------------
 Die .exe ist erstellt mit launch4j.
-Dieses Projekt ist verfügbar unter: http://launch4j.sourceforge.net/
+Dieses Projekt ist verfuegbar unter: http://launch4j.sourceforge.net/
 
 vorgeschlagene Einstellungen:
 Basic:
-  Output file:  Wähle den Ort der Ausgabe der .exe-Datei
+  Output file:  Waehle den Ort der Ausgabe der .exe-Datei
   Jar:          Eingabedatei
-  Icon:         gehe zum Ordner "NEMA" und wähle dort "Daten\Nema.ico"
+  Icon:         gehe zum Ordner "NEMA" und waehle dort "Daten\Nema.ico"
 JRE:
   Min JRE version:  1.6.0
 
 
-Drücke abschliessende "Build wrapper" zum Erstellen der .exe.
+Druecke abschliessend "Build wrapper" zum Erstellen der .exe.
