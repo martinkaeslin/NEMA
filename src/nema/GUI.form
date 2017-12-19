@@ -70,7 +70,11 @@
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
               <Component id="KeyRed" pref="40" max="32767" attributes="0"/>
           </Group>
-          <Component id="InnerKeyLabel" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="InnerKeyLabel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="RamdomInnerKeyButton" min="-2" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
               <Component id="jScrollPane3" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -80,7 +84,11 @@
                   <Component id="copyButtonInput" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
-          <Component id="InputLabel" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="InputLabel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="RamdomOuterKeyButton" min="-2" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
               <Component id="OuterKeyLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -123,8 +131,11 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="InnerKeyLabel" min="-2" pref="19" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="InnerKeyLabel" min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="RamdomInnerKeyButton" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="KeyRed" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -140,7 +151,10 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="InputLabel" min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="InputLabel" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="RamdomOuterKeyButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="OuterKey" min="-2" pref="25" max="-2" attributes="0"/>
@@ -156,7 +170,7 @@
                       <Component id="copyButtonInput" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane3" pref="104" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="100" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -174,7 +188,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="copyButtonOutput" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="107" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="103" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
               <Component id="bottom" min="-2" max="-2" attributes="0"/>
@@ -700,6 +714,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pasteAddButtonInputActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="RamdomInnerKeyButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="zuf&#xe4;lliger innerer Schl&#xfc;ssel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RamdomInnerKeyButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="RamdomOuterKeyButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="zuf&#xe4;lliger &#xe4;usserer Schl&#xfc;ssel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RamdomOuterKeyButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

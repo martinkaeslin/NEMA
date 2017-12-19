@@ -15,6 +15,9 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -180,6 +183,8 @@ public class GUI extends javax.swing.JFrame{
         pasteButtonInput = new javax.swing.JButton();
         copyButtonOutput = new javax.swing.JButton();
         pasteAddButtonInput = new javax.swing.JButton();
+        RamdomInnerKeyButton = new javax.swing.JButton();
+        RamdomOuterKeyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(480, 525));
@@ -395,6 +400,20 @@ public class GUI extends javax.swing.JFrame{
             }
         });
 
+        RamdomInnerKeyButton.setText("zufälliger innerer Schlüssel");
+        RamdomInnerKeyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RamdomInnerKeyButtonActionPerformed(evt);
+            }
+        });
+
+        RamdomOuterKeyButton.setText("zufälliger äusserer Schlüssel");
+        RamdomOuterKeyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RamdomOuterKeyButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -434,7 +453,10 @@ public class GUI extends javax.swing.JFrame{
                 .addComponent(KeyBox8, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(3, 3, 3)
                 .addComponent(KeyRed, javax.swing.GroupLayout.PREFERRED_SIZE, 40, Short.MAX_VALUE))
-            .addComponent(InnerKeyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(InnerKeyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RamdomInnerKeyButton))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane3)
                 .addGap(0, 0, 0)
@@ -442,7 +464,10 @@ public class GUI extends javax.swing.JFrame{
                     .addComponent(pasteAddButtonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pasteButtonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(copyButtonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addComponent(InputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(InputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RamdomOuterKeyButton))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(OuterKeyLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -475,7 +500,9 @@ public class GUI extends javax.swing.JFrame{
                             .addComponent(RadioCOMBAT))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(InnerKeyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(InnerKeyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RamdomInnerKeyButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(KeyRed, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,7 +517,9 @@ public class GUI extends javax.swing.JFrame{
                         .addComponent(KeyBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(KeyBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(InputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RamdomOuterKeyButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(OuterKey, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -504,7 +533,7 @@ public class GUI extends javax.swing.JFrame{
                         .addGap(5, 5, 5)
                         .addComponent(copyButtonInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addGap(3, 3, 3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cipher)
@@ -518,7 +547,7 @@ public class GUI extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(copyButtonOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
                 .addGap(3, 3, 3)
                 .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -783,7 +812,7 @@ public class GUI extends javax.swing.JFrame{
     private void InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoActionPerformed
         File file = new File(fileLoc);
         //Output.setText(System.getProperty("user.dir"));
-        if(file.exists()){
+        if(file.exists() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)){
             try{
                 Desktop.getDesktop().open(file);
             } catch (IOException ignore) {
@@ -830,16 +859,18 @@ public class GUI extends javax.swing.JFrame{
             copyButtonOutput.setToolTipText("<html>Kopiere die Ausgabe in die Zwischenablage.<br>Entspricht: <i>Ctrl</i> + <i>C</i>");
             pasteButtonInput.setToolTipText("<html>Einfügen: Ersetze die vorhandenen Eingabe mit dem Inhalt aus der Zwischenablage.");
             pasteAddButtonInput.setToolTipText("<html>Einfügen: Hänge den Inhalt aus der Zwischenablage an die vorhandenen Eingabe an.<br>Entspricht: <i>Ctrl</i> + <i>V</i> mit gesetztem Kursor am Textende.");
+            RamdomInnerKeyButton.setText("zufälliger innerer Schlüssel");
+            RamdomOuterKeyButton.setText("zufälliger äusserer Schlüssel");
             fileLoc = "./daten/de_NEMA.pdf";
         }
         else if(Language.getSelectedItem().toString().equalsIgnoreCase("English")){
             Title.setText("NEMA");
             RadioCOMBAT.setText("combat mode");
             RadioSCHOOL.setText("school mode");
-            Info.setText("infos");
+            Info.setText("info");
             InnerKeyLabel.setText("Inner key - rotor position");
             InputLabel.setText("Input");
-            OuterKeyLabel.setText("Outer Key: ");
+            OuterKeyLabel.setText("Outer key: ");
             cipher.setText("cipher");
             clear.setText("clear all");
             OutputLabel.setText("Output");
@@ -854,6 +885,8 @@ public class GUI extends javax.swing.JFrame{
             copyButtonOutput.setToolTipText("<html>Copy the output into the clipboard.<br>Equivalent to: <i>Ctrl</i> + <i>C</i>");
             pasteButtonInput.setToolTipText("<html>Insert: Replace the present input with the content from the clipboard.");
             pasteAddButtonInput.setToolTipText("<html>Insert: Append the content from the clipboard to the present text.<br>Entspricht: <i>Ctrl</i> + <i>V</i> with cursor placed at the end of the text.");
+            RamdomInnerKeyButton.setText("random inner key");
+            RamdomOuterKeyButton.setText("random outer key");
             fileLoc = "./daten/en_NEMA.pdf";
         }
         else {
@@ -901,6 +934,34 @@ public class GUI extends javax.swing.JFrame{
             //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_pasteAddButtonInputActionPerformed
+
+    private void RamdomInnerKeyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RamdomInnerKeyButtonActionPerformed
+        ArrayList<Character> ch = new ArrayList<>();
+        CHAR.forEach((item) -> { ch.add(item); });
+        ArrayList<Integer> n = new ArrayList<>();
+        NUM.forEach((item) -> { n.add(item); });
+        Collections.shuffle(ch);
+        Collections.shuffle(n);
+        KeyBox1.setSelectedItem(n.get(0)+"");
+        KeyBox3.setSelectedItem(n.get(1)+"");
+        KeyBox5.setSelectedItem(n.get(2)+"");
+        KeyBox7.setSelectedItem(n.get(3)+"");
+        KeyBox2.setSelectedItem(ch.get(0)+"");
+        KeyBox4.setSelectedItem(ch.get(1)+"");
+        KeyBox6.setSelectedItem(ch.get(2)+"");
+        KeyBox8.setSelectedItem(ch.get(3)+"");
+    }//GEN-LAST:event_RamdomInnerKeyButtonActionPerformed
+
+    private void RamdomOuterKeyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RamdomOuterKeyButtonActionPerformed
+        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String[] scram = str.split("");
+        List<String> letters = Arrays.asList(scram);
+        Collections.shuffle(letters);
+        StringBuilder sb = new StringBuilder(str.length());
+        letters.forEach((ch) -> { sb.append(ch); });
+        OuterKey.setText(sb.toString().substring(0, 10));
+        checkOuterKey();
+    }//GEN-LAST:event_RamdomOuterKeyButtonActionPerformed
 
     /**
      * Checks outer key to be alphabetic and of length 10.<br>
@@ -995,6 +1056,8 @@ public class GUI extends javax.swing.JFrame{
     private javax.swing.JLabel OutputLabel;
     protected javax.swing.JRadioButton RadioCOMBAT;
     protected javax.swing.JRadioButton RadioSCHOOL;
+    private javax.swing.JButton RamdomInnerKeyButton;
+    private javax.swing.JButton RamdomOuterKeyButton;
     private javax.swing.JLabel Title;
     protected javax.swing.JTextField UKW;
     private javax.swing.JTextPane bottom;
