@@ -17,9 +17,9 @@ Dieses Projekt ist verfügbar unter: http://launch4j.sourceforge.net/
 
 vorgeschlagene Einstellungen:
 Basic:
-  Output file:  select path for .exe file
-  Jar:          input file
-  Icon:         select your folder where NEMA is and go to Daten\Nema.ico
+  Output file:  Wähle den Ort der Ausgabe der .exe-Datei
+  Jar:          Eingabedatei
+  Icon:         gehe zum Ordner "NEMA" und wähle dort "Daten\Nema.ico"
 JRE:
   Min JRE version:  1.6.0
 
