@@ -28,7 +28,7 @@ import javax.swing.SwingWorker;
 
 
 /**
- * @version 0.9.1
+ * @version 0.1.1
  * @author Martin
  */
 public class GUI extends javax.swing.JFrame{
@@ -581,7 +581,8 @@ public class GUI extends javax.swing.JFrame{
         //read new input
         String input = Input.getText().toUpperCase();
         String outerkey = OuterKey.getText().toUpperCase().replaceAll(" ", "");
-        
+        counter = 0; //reserts counter if running it more than once.
+
         for(int i = 0; i < input.length(); i++){
             char ch = input.charAt(i);
             
